@@ -27,7 +27,19 @@ const server = app.listen(port, ()=>{
 	console.log(`running on localhost: ${port}`);
 });
 
+// ana b-post data men el app f lazm ast2blha men el server
+// POST route
+app.post('/addData', (req,res)=>{
+	// post temp, date, user feeling
+	projectData.temp = req.body.temp;
+	//TODO nfs el klam lel date wel user feeling
+});
 
-
-
+// GET route
+// el goz2 ely byb3at el data
+// el url hna nfs ely fe fetch fe updateUI
+app.get('/data', (req,res)=>{
+	//send res data of endpoint object
+	res.send(projectData);
+});
 

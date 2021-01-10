@@ -19,6 +19,9 @@ function performAction(){
 		alert('please enter zip code');
 	}
 	else{
+		// tarteb nadh el functions
+		getData.then((data) => postData(url, data).then(() => updateUI));
+
 		const getData = async() =>{
 			//fetch data from api
 			//const request = await fetch(url); // url gwaha zip code w apikey w unit = metric
@@ -51,8 +54,25 @@ function performAction(){
 		      //const newData = await response.json();
 		      //return newData
 		    }catch(error) {
-		    console.log("error", error);
+		    	console.log("error", error);
 		    }
+		}
+		//TODO call postData fn with same url of app.post in server side and data: response returned from getData & user input
+
+		// update ui
+		const updateUI = async () =>{
+			// fetch data from server
+			const request = await fetch('/data');
+			try{
+				// convert json data to js 
+				const response = await request.json();
+				// then update ui
+				const dateDiv = document.getElementById('date');
+				dateDiv.innerHTML = response // TODO h7ot hna value el date el rg3aly men el response
+
+			} catch(error){
+				console.log("error", error);
+			}
 		}
 
 	}
