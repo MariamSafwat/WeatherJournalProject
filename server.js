@@ -55,4 +55,5 @@ app.get('/data', (req,res)=>{
 	//send res data of endpoint object
 	res.send(projectData);
 });
-
+// TODO change layout (html & css)
+// TODO update ReadMe

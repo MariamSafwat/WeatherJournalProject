@@ -8,26 +8,38 @@
 </head>
  <body>
 <div id = "app">
-  <div class ="holder headline">
-    Weather Journal App
+  <div class="container">
+    <div class ="row headline">
+      <h1>Weather Journal App</h1>
+    </div>
   </div>
-  <div class ="holder zip">
-    <label for="zip">Enter Zipcode here</label>
-    <input type="text" id="zip" placeholder="enter zip code here">
-  </div>
-  <div class ="holder feel">
-    <label for="feelings">How are you feeling today?</label>
-    <textarea class= "myInput" id="feelings" placeholder="Enter your feelings here" rows="9" cols="50"></textarea>
-    <button id="generate" type = "submit"> Generate </button>
-  </div>
-  <div class ="holder entry">
-    <div class = "title">Most Recent Entry</div>
-   <div id = "entryHolder">
-    <div id = "date"></div> 
-   <div id = "temp"></div>
-   <div id = "content"></div>
-  </div>
-  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class ="row zip">
+        <label for="zip">Enter Zipcode here</label>
+        <div class="row"><input type="text" id="zip" placeholder="enter zip code here"></div>
+      </div>
+      <div class ="row feel">
+        <label for="feelings">How are you feeling today?</label>
+        <textarea class= "myInput" id="feelings" placeholder="Enter your feelings here" rows="9" cols="50"></textarea>
+        <button id="generate" type = "submit"> Generate </button>
+      </div>
+    </div>
+    <div class ="col-6 entry">
+      <label class = "title">Most Recent Entry</label>
+      <div class="container">
+       <div class="row" id = "entryHolder">
+        <label>Date:</label>
+        <div class="row" id = "date"></div> 
+        <label>Temperature:</label>
+       <div class="row" id = "temp"></div>
+       <label>Your feeling today:</label>
+       <div class="row" id = "content"></div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
   </div>
 <script src="app.js" type="text/javascript"></script>
 
