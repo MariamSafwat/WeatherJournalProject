@@ -13,7 +13,7 @@ const app = express();
 
 /* Middleware*/
 const bodyParser = require('body-parser');
-//Here we are configuring express to use body-parser as middle-ware.
+//configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -32,28 +32,20 @@ const server = app.listen(port, ()=>{
 });
 
 
-// ana b-post data men el app f lazm ast2blha men el server
+// recieve the data posted on client side
 // POST route
 app.post('/addData', (req,res)=>{
-	console.log("in post");
-	console.log('req');
-	console.log(req.body);
-	//console.log(res);
-	// post temp, date, user feeling
+	// add temp, date, user feeling to endpoint
 	projectData.temp = req.body.res.main.temp;
-	//TODO nfs el klam lel date wel user feeling
 	projectData.date = req.body.newDate;
 	projectData.feeling = req.body.feeling;
 	res.send('post received');
-	console.log(projectData);
 });
+// send data to client side to update ui
 // GET route
-// el goz2 ely byb3at el data
-// el url hna nfs ely fe fetch fe updateUI
+// same url as in updateUI fetch 
 app.get('/data', (req,res)=>{
-	console.log('in get');
 	//send res data of endpoint object
 	res.send(projectData);
 });
-// TODO change layout (html & css)
-// TODO update ReadMe
+
